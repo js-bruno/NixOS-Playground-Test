@@ -1,7 +1,7 @@
 {config, pkgs, callPackage, ...}:
 
 {
-
+programs.zoxide.enableZshIntegration = true;
 programs.zsh = {
     enable = true;
     enableCompletion = true;

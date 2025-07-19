@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, callPackage, ... }:
 
 {
@@ -102,9 +98,17 @@
 	WELCOME
 	TO MY CONFIG FILE
    '';
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.iosevka-term
+    nerd-fonts.comic-shanns-mono
+  ];
   environment.systemPackages = with pkgs; [
+    lazygit
     git
+    rofi
     stow
+    zoxide
     librewolf
     vim
     alacritty
